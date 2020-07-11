@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "Warn Insecure Redirection"
+  },
+  "extensionDescription": {
+    "message": "To protect your privacy, this extension warns you if a URL looks to be a redirection URL and does not use HTTPS."
+  }
+}

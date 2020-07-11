@@ -1,0 +1,65 @@
+html, body, h1 {margin: 0; padding: 0}
+body {font: normal 14pt Arial; background: #ddd}
+
+h1 {font: normal 40pt Arial; padding: 4vh 0.5em; text-align: center; background: #e66}
+
+#urls {margin: 9vh 0 2em 0}
+
+#urls > a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 2% 5%;
+  text-decoration: none;
+  color: #000;
+  background: #fff linear-gradient(0deg, #ddd, #fff 75%);
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  border-color: #aaa #999 #999 #aaa;
+  padding: 0.2em;
+  box-shadow: 1px 1px 5px rgba(1,1,1,0.05);
+}
+#urls > a.selected,
+#urls > a:active,
+#urls > a:hover,
+#urls > a:focus {
+  background: #eee linear-gradient(0deg, #ccc, #fff 75%);
+  box-shadow: 1px 1px 5px rgba(1,1,1,0.2);
+}
+
+#urls > a:active {
+  background: #ddd linear-gradient(0deg, #bbb, #f3f3f3 75%);
+}
+
+#urls > a.selected > .icon {
+  animation: flashy 0.5s infinite alternate;
+}
+
+#urls > a > .icon {
+  font-size: 26pt;
+  font-weight: bold;
+  text-align: center;
+  padding: 3px 1%;
+}
+
+#urls > a > addr {
+  flex: 1;
+  padding: 5px;
+  color: #bbb;
+  font-family: monospace;
+  word-break: break-all;
+}
+#urls > a > addr > strong {
+  color: #000;
+}
+#urls > a > addr > strong:nth-of-type(2) {
+  font-weight: normal;
+  color: #777;
+}
+
+.flash {
+  animation: flashy 0.5s infinite alternate;
+}
+@keyframes flashy {
+  from {opacity: 1} to {opacity: 0.4}
+}
