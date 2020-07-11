@@ -1,5 +1,7 @@
 # Warn Insecure Redirection
 
+## Overview:
+
 If you visit a link that appears to simply be a redirection link and that link is not loaded over HTTPS, it will expose the redirection link to potential snoopers.
 
 For example, if you visit:
