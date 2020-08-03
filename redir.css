@@ -1,9 +1,39 @@
-html, body, h1 {margin: 0; padding: 0}
-body {font: normal 14pt Arial; background: #ddd}
+html, body, h1 {margin: 0; padding: 0; height: 100%}
+body {
+  font: normal 14pt Arial;
+  background: #ddd;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+}
 
-h1 {font: normal 40pt Arial; padding: 4vh 0.5em; text-align: center; background: #e66}
+h1 {flex: 0 1; font: normal 40pt Arial; padding: 4vh 0.5em; text-align: center; background: #e66}
+footer {flex: 0 1; font: normal 8pt Arial; padding: 5px; text-align: center; color: #aaa}
 
-#urls {margin: 9vh 0 2em 0}
+aside {
+  text-align: right;
+  margin: 0.5em 1% 0 1%;
+}
+#settings {
+  background: transparent;
+  border: 0;
+  padding: 0.3em 0.5em 0.3em 0.7em;
+  border-radius: 15px;
+  color: rgba(0, 0, 0, 0.7);
+}
+#settings:hover, #settings:active {
+  background: #ccc;
+}
+#settingsUrl {
+  margin-right: 0.4em;
+  color: #aaa;
+}
+#settings:active > #settingsUrl,
+#settings:hover > #settingsUrl {
+  color: #000;
+}
+
+#urls {flex: 1; margin: 8vh 0 1em 0}
 
 #urls > a {
   display: flex;
@@ -15,9 +45,9 @@ h1 {font: normal 40pt Arial; padding: 4vh 0.5em; text-align: center; background:
   background: #fff linear-gradient(0deg, #ddd, #fff 75%);
   border-radius: 8px;
   border: 1px solid #aaa;
-  border-color: #aaa #999 #999 #aaa;
+  border-color: #bbb #999 #999 #bbb;
   padding: 0.2em;
-  box-shadow: 1px 1px 5px rgba(1,1,1,0.05);
+  box-shadow: 2px 2px 5px rgba(1,1,1,0.05);
 }
 #urls > a.selected,
 #urls > a:active,
@@ -28,7 +58,7 @@ h1 {font: normal 40pt Arial; padding: 4vh 0.5em; text-align: center; background:
 }
 
 #urls > a:active {
-  background: #ddd linear-gradient(0deg, #bbb, #f3f3f3 75%);
+  background: #ddd linear-gradient(0deg, #bbb, #f3f3f3 85%);
 }
 
 #urls > a.selected > .icon {
