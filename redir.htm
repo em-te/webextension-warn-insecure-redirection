@@ -4,27 +4,34 @@
   <meta charset="UTF-8">
   <meta name=viewport content="width=device-width">
   <meta name="referrer" content="no-referrer">
+  <link rel="shortcut icon" href="favicon.png">
   <link rel=stylesheet href="redir.css">
 </head>
 <body>
   <h1>&#x1F513;&ctdot;&#x26A0;&#xFE0F;</h1>
 
+  <aside>
+    <button id=settings tabindex=4><span id=settingsUrl>&hellip;</span>&#x2699;&#xFE0F;</button>
+  </aside>
+
   <nav id=urls>
-    <a id=httpsUrl href="#">
+    <a id=httpsUrl href="#" tabindex=1>
       <div id=httpsIcon class=icon><span class=flash>&#x1F4E1;</span></div>
       <addr id=httpsAddr>https:&hellip;</addr>
     </a>
 
-    <a id=redirUrl href="#">
+    <a id=redirUrl href="#" tabindex=2>
       <div id=redirIcon class=icon><span class=flash>&#x1F4E1;</span></div>
       <addr id=redirAddr>https:&hellip;</addr>
     </a>
 
-    <a id=origUrl href="#">
+    <a id=origUrl href="#" tabindex=3>
       <div id=origIcon class=icon>&#x26A0;&#xFE0F;</div>
       <addr id=origAddr>http:&hellip;</addr>
     </a>
   </nav>
+
+  <footer>Warn Insecure Redirection</footer>
   <script src="redir.js"></script>
 </body>
 </html>
