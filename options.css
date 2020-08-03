@@ -1,0 +1,38 @@
+html, body, h1, ul, li {margin: 0; padding: 0}
+ul, li {list-style: none}
+h1 {font: normal 24pt Arial; text-align: center}
+ul {
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+body, input, select, button {font: normal 16pt Arial}
+li {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #eee;
+}
+li > div {
+  flex: 1;
+  margin-right: 3px;
+}
+li > div > input {
+  margin-bottom: 3px;
+  width: 12em;
+}
+input::placeholder {
+  opacity: 0.5;
+}
+li > button {
+  border: 0;
+  background: transparent;
+  background: #ddd;
+}
+button:disabled {
+  visibility: hidden;
+}
