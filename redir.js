@@ -96,6 +96,30 @@ function init() {
   }
 
   chrome.runtime.sendMessage({bypassTab: true});
+
+  document.title = url;
+
+  let hostname = new URL(url).hostname;
+  $("settingsUrl").textContent = hostname;
+
+  if(!state.visited) {
+    chrome.storage.local.get("domains", ({domains}) => {
+      let action = domains && domains[hostname];
+      if(action) {
+        let node = action === 1 ? $("httpsUrl") : action === 2 ? $("redirUrl") : action === 3 ? $("origUrl") : null;
+        if(node) {
+          node.classList.add("selected");
+          node.click();
+          node.focus();
+        }
+      }
+    });
+  }
+
+  $("settings").onclick = () => {
+    chrome.runtime.openOptionsPage();
+    chrome.storage.local.set({lastHost: hostname});
+  };
 }
 
 init();
@@ -141,5 +165,3 @@ function extract(url) {
 function toHTTPs(url) {
   return url.substr(0, 5) === "http:" ? "https" + url.substr(4) : url;
 }
-
-document.title = document.querySelector("h1").textContent;
