@@ -61,11 +61,11 @@ aside {
   background: #ddd linear-gradient(0deg, #bbb, #f3f3f3 85%);
 }
 
-#urls > a.selected > .icon {
+#urls > a.selected > *[role=img] {
   animation: flashy 0.5s infinite alternate;
 }
 
-#urls > a > .icon {
+#urls > a > *[role=img] {
   font-size: 26pt;
   font-weight: bold;
   text-align: center;
