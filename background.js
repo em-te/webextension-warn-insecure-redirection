@@ -28,9 +28,11 @@ chrome.webRequest.onBeforeRequest.addListener(
   {
     urls: [
       "http://*/*?*http://*",
-      "http://*/*?*https://*",
       "http://*/*?*http%3A%2F%2F*",
-      "http://*/*?*https%3A%2F%2F*"
+      "http://*/*?*http%3a%2f%2f*",
+      "http://*/*?*https://*",
+      "http://*/*?*https%3A%2F%2F*",
+      "http://*/*?*https%3a%2f%2f*"
     ],
     types: ["main_frame"]
   },
@@ -43,10 +45,12 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
 });
 
 function extract(url) {
-  let pos = url.indexOf("http://");
+  let pos =         url.indexOf("http://");
   if(pos < 0) pos = url.indexOf("https://");
   if(pos < 0) pos = url.indexOf("http%3A%2F%2F");
+  if(pos < 0) pos = url.indexOf("http%3a%2f%2f");
   if(pos < 0) pos = url.indexOf("https%3A%2F%2F");
+  if(pos < 0) pos = url.indexOf("https%3a%2f%2f");
   
   url = url.substr(pos);
 
