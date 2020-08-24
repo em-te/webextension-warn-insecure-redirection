@@ -145,10 +145,12 @@ function truncate(str) {
 
 function extract(url) {
   //get the URL that is embedded inside the main URL
-  let pos = url.indexOf("http://");
+  let pos =         url.indexOf("http://");
   if(pos < 0) pos = url.indexOf("https://");
   if(pos < 0) pos = url.indexOf("http%3A%2F%2F");
+  if(pos < 0) pos = url.indexOf("http%3a%2f%2f");
   if(pos < 0) pos = url.indexOf("https%3A%2F%2F");
+  if(pos < 0) pos = url.indexOf("https%3a%2f%2f");
   
   url = url.substr(pos);
 
