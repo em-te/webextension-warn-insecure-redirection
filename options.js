@@ -31,7 +31,7 @@ function init() {
       li.querySelector("select").value = "none";
 
       if(li.animate) {
-        li.animate([{opacity: 1}, {opacity: 0}], 500).onfinish = () => {
+        li.animate([{opacity: 1}, {opacity: 0}], {duration: 500, easing: "ease"}).onfinish = () => {
           li.parentNode.removeChild(li);
         };
       } else {
